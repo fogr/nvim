@@ -35,8 +35,12 @@ vim.api.nvim_set_keymap('x', 'K', ":move '>+1<CR>gv-gv", { noremap = true, silen
 vim.api.nvim_set_keymap('x', '<expr><TAB>', 'pumvisible() ? "\\<C-n>" : "\\<TAB>"', { noremap = true, silent = true })
 
 -- Telescope
---vim.api.nvim_set_keymap('n', '<C-p>', ':Telescope find_files<CR>', { noremap = true, silent = true })
+-- default mappings
 vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fb', ':Telescope buffers<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fh', ':Telescope help_tags<CR>', { noremap = true, silent = true })
+
+-- git mappings
+vim.api.nvim_set_keymap('n', '<leader>gb', ':Telescope git_branches<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })

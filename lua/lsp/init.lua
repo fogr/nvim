@@ -1,4 +1,5 @@
 require 'lsp.tsserver-rc'
+require 'lsp.gopls-rc'
 
 local nvim_lsp = require('lspconfig')
 

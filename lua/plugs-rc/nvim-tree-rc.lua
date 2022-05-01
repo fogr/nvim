@@ -1,3 +1,8 @@
-vim.g.nvim_tree_ignore = {'.git', 'node_modules'}
 vim.g.nvim_tree_auto_close = 1
-vim.g.nvim_tree_tab_open = 1
+require'nvim-tree'.setup {
+  filters = {
+    custom = {'.git', 'node_modules'}
+  },
+  open_on_tab = true,
+  open_on_setup = true
+}

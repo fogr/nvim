@@ -20,6 +20,8 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
   use {'tjdevries/colorbuddy.vim', {'nvim-treesitter/nvim-treesitter', opt = true}}
+  -- debug
+  use 'mfussenegger/nvim-dap'
 
   -- telescope
   use 'nvim-lua/popup.nvim'

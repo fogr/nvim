@@ -48,4 +48,7 @@ return require('packer').startup(function()
   
   -- extension
   use 'github/copilot.vim'
+
+  -- key
+  use 'folke/which-key.nvim'
 end)

@@ -2,45 +2,66 @@
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', { noremap = true, silent = true})
 vim.g.mapleader = ' '
 
--- Pane navigation
-vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { silent = true })
-vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { silent = true })
-vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { silent = true })
-vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { silent = true })
-vim.api.nvim_set_keymap('n', '<C-e>', '<C-w><C-w>', { noremap = true, silent = true })
+local wk = require('which-key')
 
--- Window movement
+--# Window movement
+-- Tree
+wk.register({
+  ['<leader>'] = {
+    e = {':NvimTreeToggle<CR>', 'Toggle tree view'},
+  }
+}, { mode = 'n', noremap = true, silent = true })
 
--- Indenting
-vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
+-- Switch window 
+wk.register({
+  h = { '<C-w>h', 'Switch to left window' },
+  l = { '<C-w>l', 'Switch to right window' },
+  j = { '<C-w>j', 'Switch to bottom window' },
+  k = { '<C-w>k', 'Switch to top window' },
+}, { prefix = 'C', mode = 'n', silent = true })
 
--- Escape
---[[
-vim.api.nvim_set_keymap('i', 'jk', '<ESC>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', 'kj', '<ESC>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { noremap = true, silent = true })
---]]
+-- Switch tab
+wk.register({
+  ['<TAB>'] = { ':bnext<CR>', 'Switch to next buffer' },
+  ['<S-TAB>'] = { ':bnext<CR>', 'Switch to previous buffer' },
+}, { mode = 'n', noremap = true, silent = true })
 
--- Tab switch buffer
-vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', { noremap = true, silent = true })
+
+--# Text editing
+-- Indentation
+wk.register({
+  v = {
+    ['<'] = {'<gv', 'Snap left'},
+    ['>'] = {'>gv', 'Snap right'},
+  },
+}, { mode = 'v', noremap = true, silent = true})
 
 -- Move selected in visual mode
-vim.api.nvim_set_keymap('x', 'J', ":move '<-2<CR>gv-gv", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('x', 'K', ":move '>+1<CR>gv-gv", { noremap = true, silent = true })
+wk.register({
+  x = {
+    J = {":move '<-2<CR>gv-gv", 'Move selected line up'},
+    K = {":move '>+1<CR>gv-gv", 'Move selected line down'},
+  }
+}, { mode = 'x', noremap = true, silent = true})
 
 -- TAB complete
-vim.api.nvim_set_keymap('x', '<expr><TAB>', 'pumvisible() ? "\\<C-n>" : "\\<TAB>"', { noremap = true, silent = true })
+wk.register({
+  ['<expr><TAB>'] = {'pumvisible() ? "\\<C-n>": "\\<TAB>"', 'Tab complete'},
+}, { mode = 'x', noremap = true, silent = true })
 
--- Telescope
--- default mappings
-vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>fg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>fb', ':Telescope buffers<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>fh', ':Telescope help_tags<CR>', { noremap = true, silent = true })
 
--- git mappings
-vim.api.nvim_set_keymap('n', '<leader>gb', ':Telescope git_branches<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
+--# Telescope
+wk.register({
+  -- Navigate through files and buffers
+  f = {
+    f = {':Telescope find_files<CR>', 'Find files'},
+    g = {':Telescope live_grep<CR>', 'Find grep'},
+    b = {':Telescope buffers<CR>', 'List buffers'},
+    h = {':Telescope help_tags<CR>', 'Show help'},
+  },
+  -- Git utilities
+  g = {
+    b = {':Telescope git_branches<CR>', 'List branches'},
+    g = {':LazyGit<CR>', 'Lazy git'},
+  }
+}, { mode = 'n', prefix='<leader>', noremap = true, silent = true })

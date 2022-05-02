@@ -21,3 +21,5 @@ vim.o.showmode = false
 vim.t_Co = "256"
 
 vim.o.clipboard = "unnamedplus"
+
+vim.o.timeoutlen = 500

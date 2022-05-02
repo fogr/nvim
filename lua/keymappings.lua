@@ -4,6 +4,12 @@ vim.g.mapleader = ' '
 
 local wk = require('which-key')
 
+wk.register({
+  r = {
+    r = {':source $MYVIMRC', 'Reload neovim config'},
+  }
+}, { mode = 'n', prefix = '<leader>', noremap = true, silent = true })
+
 --# Window movement
 -- Tree
 wk.register({
@@ -27,18 +33,17 @@ wk.register({
 }, { mode = 'n', noremap = true, silent = true })
 
 
---# Text editing
--- Indentation
+-- Text editing
 wk.register({
   v = {
+    name = "Indentation",
     ['<'] = {'<gv', 'Snap left'},
     ['>'] = {'>gv', 'Snap right'},
   },
 }, { mode = 'v', noremap = true, silent = true})
-
--- Move selected in visual mode
 wk.register({
   x = {
+    name = "Move selected",
     J = {":move '<-2<CR>gv-gv", 'Move selected line up'},
     K = {":move '>+1<CR>gv-gv", 'Move selected line down'},
   }
@@ -50,18 +55,27 @@ wk.register({
 }, { mode = 'x', noremap = true, silent = true })
 
 
---# Telescope
+-- Telescope
 wk.register({
-  -- Navigate through files and buffers
   f = {
+    name = "File",
     f = {':Telescope find_files<CR>', 'Find files'},
     g = {':Telescope live_grep<CR>', 'Find grep'},
     b = {':Telescope buffers<CR>', 'List buffers'},
     h = {':Telescope help_tags<CR>', 'Show help'},
   },
-  -- Git utilities
   g = {
+    name = "Git",
     b = {':Telescope git_branches<CR>', 'List branches'},
     g = {':LazyGit<CR>', 'Lazy git'},
+  },
+  b = {
+    name = "Debug",
+    c = {':Telescope dap commands<CR>', 'DAP commands'},
+    s = {':Telescope dap configurations<CR>', 'DAP configurations'},
+    l = {':Telescope dap list_breakpoints<CR>', 'DAP breakpoints'},
+    v = {':Telescope dap variables<CR>', 'DAP variables'},
+    f = {':Telescope dap frames<CR>', 'DAP frames'},
   }
 }, { mode = 'n', prefix='<leader>', noremap = true, silent = true })
+

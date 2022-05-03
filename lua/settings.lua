@@ -22,4 +22,5 @@ vim.t_Co = "256"
 
 vim.o.clipboard = "unnamedplus"
 
-vim.o.timeoutlen = 500
+vim.o.timeoutlen = 400
+vim.o.termguicolors = true

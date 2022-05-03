@@ -4,5 +4,5 @@ require'nvim-tree'.setup {
     custom = {'.git', 'node_modules'}
   },
   open_on_tab = true,
-  open_on_setup = true
+  open_on_setup = true,
 }

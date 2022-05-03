@@ -13,12 +13,14 @@ return require('packer').startup(function()
   
   -- explorer
   use 'kyazdani42/nvim-tree.lua'
+  use 'akinsho/bufferline.nvim'
 
   -- lsp
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
-  use {'tjdevries/colorbuddy.vim', {'nvim-treesitter/nvim-treesitter', opt = true}}
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'tjdevries/colorbuddy.vim'
 
   -- telescope
   use 'nvim-lua/popup.nvim'
@@ -37,7 +39,12 @@ return require('packer').startup(function()
 
   -- utilities editing
   use 'windwp/nvim-autopairs'
-  use 'norcalli/nvim-colorizer.lua'
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require 'colorizer'.setup()
+    end
+  }
 
   -- git
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
@@ -47,7 +54,12 @@ return require('packer').startup(function()
   use 'github/copilot.vim'
 
   -- key
-  use 'folke/which-key.nvim'
+  use {
+    'folke/which-key.nvim',
+    config = function()
+      require('which-key').setup()
+    end
+  }
 
   -- debug
   use {

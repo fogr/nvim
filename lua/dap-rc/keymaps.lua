@@ -25,6 +25,7 @@ local keymap = {
     u = { ":lua require'dap'.step_out()<cr>", "Step Out" },
   },
 }
+
 wk.register(keymap, {
   mode = "n",
   prefix = "<leader>",

@@ -8,46 +8,46 @@ wk.register({
   r = {
     r = {':source $MYVIMRC', 'Reload neovim config'},
   }
-}, { mode = 'n', prefix = '<leader>', noremap = true, silent = true })
+  }, { mode = 'n', prefix = '<leader>', noremap = true, silent = true })
 
---# Window movement
--- Tree
-wk.register({
-  ['<leader>'] = {
-    e = {':NvimTreeToggle<CR>', 'Toggle tree view'},
-  }
-}, { mode = 'n', noremap = true, silent = true })
+  --# Window movement
+  -- Tree
+  wk.register({
+    ['<leader>'] = {
+      e = {':NvimTreeToggle<CR>', 'Toggle tree view'},
+    }
+  }, { mode = 'n', noremap = true, silent = true })
 
--- Switch window 
-wk.register({
-  h = { '<C-w>h', 'Switch to left window' },
-  l = { '<C-w>l', 'Switch to right window' },
-  j = { '<C-w>j', 'Switch to bottom window' },
-  k = { '<C-w>k', 'Switch to top window' },
-}, { prefix = 'C', mode = 'n', silent = true })
+  -- Switch window 
+  wk.register({
+    h = { '<C-w>h', 'Switch to left window' },
+    l = { '<C-w>l', 'Switch to right window' },
+    j = { '<C-w>j', 'Switch to bottom window' },
+    k = { '<C-w>k', 'Switch to top window' },
+  }, { prefix = 'C', mode = 'n', silent = true })
 
--- Switch tab
-wk.register({
-  ['<TAB>'] = { ':bnext<CR>', 'Switch to next buffer' },
-  ['<S-TAB>'] = { ':bnext<CR>', 'Switch to previous buffer' },
-}, { mode = 'n', noremap = true, silent = true })
+  -- Switch tab
+  wk.register({
+    ['<TAB>'] = { ':bnext<CR>', 'Switch to next buffer' },
+    ['<S-TAB>'] = { ':bnext<CR>', 'Switch to previous buffer' },
+  }, { mode = 'n', noremap = true, silent = true })
 
 
--- Text editing
-wk.register({
-  v = {
-    name = "Indentation",
-    ['<'] = {'<gv', 'Snap left'},
-    ['>'] = {'>gv', 'Snap right'},
-  },
-}, { mode = 'v', noremap = true, silent = true})
-wk.register({
-  x = {
-    name = "Move selected",
-    J = {":move '<-2<CR>gv-gv", 'Move selected line up'},
-    K = {":move '>+1<CR>gv-gv", 'Move selected line down'},
-  }
-}, { mode = 'x', noremap = true, silent = true})
+  -- Text editing
+  wk.register({
+    v = {
+      name = "Indentation",
+      ['<'] = {'<gv', 'Snap left'},
+      ['>'] = {'>gv', 'Snap right'},
+    },
+  }, { mode = 'v', noremap = true, silent = true})
+  wk.register({
+    x = {
+      name = "Move selected",
+      J = {":move '<-2<CR>gv-gv", 'Move selected line up'},
+      K = {":move '>+1<CR>gv-gv", 'Move selected line down'},
+    }
+  }, { mode = 'x', noremap = true, silent = true})
 
 -- TAB complete
 wk.register({

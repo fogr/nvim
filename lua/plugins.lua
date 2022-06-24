@@ -18,7 +18,8 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
-  use {'tjdevries/colorbuddy.vim', {'nvim-treesitter/nvim-treesitter', opt = true}}
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'tjdevries/colorbuddy.vim'
 
   -- telescope
   use 'nvim-lua/popup.nvim'
@@ -44,7 +45,7 @@ return require('packer').startup(function()
   use 'kdheepak/lazygit.nvim'
   
   -- extension
-  use 'github/copilot.vim'
+  -- use 'github/copilot.vim'
 
   -- key
   use 'folke/which-key.nvim'

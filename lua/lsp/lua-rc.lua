@@ -1,4 +1,4 @@
-require 'lspconfig'.lua.setup {
+require 'lspconfig'.sumneko_lua.setup {
   settings = {
     Lua = {
       runtime = {

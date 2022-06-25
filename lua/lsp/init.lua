@@ -1,6 +1,11 @@
 require 'lsp.tsserver-rc'
 require 'lsp.gopls-rc'
 require 'lsp.lua-rc'
+-- require 'lsp.golangci-lint-rc'
+require 'lsp.dockerls-rc'
+require 'lsp.bashls-rc'
+require 'lsp.vscodels-rc'
+require 'lsp.vuels-rc'
 
 local nvim_lsp = require('lspconfig')
 local wk = require('which-key')
@@ -14,9 +19,6 @@ local on_attach = function(_, bufnr)
 
   --Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  -- Mappings.
-  local opts = { noremap = true, silent = true }
 
   local fn = function(func, api)
     api = api or 'buf'
@@ -50,7 +52,7 @@ local on_attach = function(_, bufnr)
         n = { fn('rename'), 'Rename' },
         a = { fn('code_action'), 'Code action' },
         s = { fn('signature_help'), 'Signature help' },
-        f = { fn('formatting'), 'Formatting' },
+        f = { fn('format'), 'Format' },
       },
       l = {
         e = { fn('show_line_diagnostics', 'diagnostic'), 'Show line diagnostic' },
@@ -69,6 +71,8 @@ local servers = {
   "gopls",
   "tsserver",
   "sumneko_lua",
+  "html",
+  "cssls",
 }
 
 for _, lsp in ipairs(servers) do

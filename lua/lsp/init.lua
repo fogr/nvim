@@ -21,8 +21,8 @@ local on_attach = function(_, bufnr)
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   local fn = function(func, api)
-    api = api or 'buf'
-    return ':lua vim.lsp.buf.' .. func .. '()<cr>'
+    api = api or 'lsp.buf'
+    return ':lua vim.' .. api .. '.' .. func .. '()<cr>'
   end
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -55,8 +55,9 @@ local on_attach = function(_, bufnr)
         f = { fn('format'), 'Format' },
       },
       l = {
-        e = { fn('show_line_diagnostics', 'diagnostic'), 'Show line diagnostic' },
-        l = { fn('set_loclist', 'diagnostic'), 'Set loclist' },
+        e = { fn('open_float', 'diagnostic'), 'Show line diagnostic' },
+        -- l = { fn('setloclist', 'diagnostic'), 'Set loclist' },
+        l = { ":lua require('telescope.builtin').diagnostics()<cr>", 'Show line diagnostic' },
         n = { fn('goto_next', 'diagnostic'), 'Next diagnostic' },
         p = { fn('goto_prev', 'diagnostic'), 'Previous diagnostic' },
       }

@@ -6,6 +6,7 @@ require('theme')
 require('keymappings')
 require('dap-rc')
 
+-- TODO: remove all old vim.cmd to vim.api autocmd
 vim.cmd [[
   autocmd BufWritePre * lua vim.lsp.buf.format()
 ]]

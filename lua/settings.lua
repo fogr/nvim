@@ -29,3 +29,5 @@ vim.o.cursorline = true
 vim.wo.foldcolumn = '1'
 vim.wo.foldlevel = 99
 vim.wo.foldenable = true
+
+vim.o.updatetime = 100

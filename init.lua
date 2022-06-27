@@ -20,3 +20,8 @@ vim.lsp.handlers['textDocument/references'] = require('telescope.builtin').lsp_r
 --     update_in_insert = false
 --   }
 -- )
+--
+
+vim.cmd [[
+  hi Folded guibg=Black
+]]

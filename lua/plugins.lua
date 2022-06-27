@@ -39,13 +39,14 @@ return require('packer').startup(function()
   -- utilities editing
   use 'windwp/nvim-autopairs'
   use 'norcalli/nvim-colorizer.lua'
+  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
   -- git
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
   use 'kdheepak/lazygit.nvim'
 
   -- extension
-  -- use 'github/copilot.vim'
+  use 'github/copilot.vim'
 
   -- key
   use 'folke/which-key.nvim'

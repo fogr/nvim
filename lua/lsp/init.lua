@@ -46,6 +46,7 @@ local on_attach = function(_, bufnr)
         a = { fn('add_workspace_folder'), 'Add workspace folder' },
         r = { fn('remove_workspace_folder'), 'Remove workspace folder' },
         l = { fn('list_workspace_folders'), 'List workspace folders' },
+        e = { ':NvimTreeFindFile<cr>', 'Show current file in tree' }
       },
       c = {
         name = 'Code',
@@ -76,9 +77,16 @@ local servers = {
   "cssls",
 }
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
+}
+
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
+    capabilities = capabilities,
     flags = {
       debounce_text_changes = 200,
     }

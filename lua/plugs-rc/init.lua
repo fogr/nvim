@@ -6,3 +6,4 @@ require('plugs-rc.nvim-telescope-rc');
 require('plugs-rc.nvim-treesitter-rc');
 require('plugs-rc.neogit-rc');
 require('plugs-rc.which-key-rc');
+require('plugs-rc.nvim-ufo-rc');

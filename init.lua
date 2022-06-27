@@ -23,5 +23,6 @@ vim.lsp.handlers['textDocument/references'] = require('telescope.builtin').lsp_r
 --
 
 vim.cmd [[
-  hi Folded guibg=Black
+  hi Folded guibg=#232b2d
+  hi CursorLine guibg=#2C3639
 ]]

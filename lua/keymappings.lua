@@ -29,7 +29,7 @@ wk.register({
 -- Switch tab
 wk.register({
   ['<TAB>'] = { ':bnext<CR>', 'Switch to next buffer' },
-  ['<S-TAB>'] = { ':bnext<CR>', 'Switch to previous buffer' },
+  ['<S-TAB>'] = { ':bprev<CR>', 'Switch to previous buffer' },
 }, { mode = 'n', noremap = true, silent = true })
 
 

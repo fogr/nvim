@@ -33,4 +33,11 @@ vim.wo.foldenable = true
 vim.o.updatetime = 100
 
 vim.o.list = true
-vim.o.listchars = 'eol:↲'
+
+vim.opt.listchars = {
+  tab = '┊ ',
+  extends = '⟩',
+  precedes = '⟨',
+  trail = '·',
+  eol = '↲',
+}

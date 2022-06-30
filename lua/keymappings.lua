@@ -28,8 +28,9 @@ wk.register({
 
 -- Switch tab
 wk.register({
-  ['<TAB>'] = { ':bnext<CR>', 'Switch to next buffer' },
-  ['<S-TAB>'] = { ':bprev<CR>', 'Switch to previous buffer' },
+  ['<TAB>'] = { ':BufferLineCycleNext<CR>', 'Switch to next buffer' },
+  ['<S-TAB>'] = { ':BufferLineCyclePrev<CR>', 'Switch to previous buffer' },
+  Q = { ':Bdelete<CR>', 'Close current buffer' },
 }, { mode = 'n', noremap = true, silent = true })
 
 

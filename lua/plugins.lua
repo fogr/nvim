@@ -30,16 +30,17 @@ return require('packer').startup(function()
   --navigation
   use 'unblevable/quick-scope'
   use 'phaazon/hop.nvim'
+  use { 'akinsho/bufferline.nvim', tag = "v2.*" }
 
   --theme
   use 'kyazdani42/nvim-web-devicons'
-  use 'hoob3rt/lualine.nvim'
   use 'eddyekofo94/gruvbox-flat.nvim'
 
   -- utilities editing
   use 'windwp/nvim-autopairs'
   use 'norcalli/nvim-colorizer.lua'
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+  use 'famiu/bufdelete.nvim'
 
   -- git
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }

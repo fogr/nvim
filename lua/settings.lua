@@ -23,3 +23,21 @@ vim.t_Co = "256"
 vim.o.clipboard = "unnamedplus"
 
 vim.o.timeoutlen = 500
+
+vim.o.cursorline = true
+
+vim.wo.foldcolumn = '1'
+vim.wo.foldlevel = 99
+vim.wo.foldenable = true
+
+vim.o.updatetime = 100
+
+vim.o.list = true
+
+vim.opt.listchars = {
+  tab = '┊ ',
+  extends = '⟩',
+  precedes = '⟨',
+  trail = '·',
+  eol = '↲',
+}

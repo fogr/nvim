@@ -40,14 +40,27 @@ local golandToDap = function()
 
     local config = parseConfig(cfgHandler.root.component.configuration)
 
-    -- TODO: handler duplicate
     table.insert(target, config)
 
     ::continue::
   end
 
+  -- handle duplicate
+  local source = dap.configurations.go
   for _, cfg in ipairs(target) do
-    table.insert(dap.configurations.go, cfg)
+    local found = false
+
+    for i, v in ipairs(source) do
+      if v.name == cfg.name then
+        source[i] = cfg
+        found = true
+        break
+      end
+    end
+
+    if not found then
+      table.insert(source, cfg)
+    end
   end
 
   return true

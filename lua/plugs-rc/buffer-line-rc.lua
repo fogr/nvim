@@ -53,9 +53,33 @@ require('bufferline').setup {
         return true
       end
     end,
-    offsets = { { filetype = "NvimTree",
-      text = function() return '🔭 ' .. string.upper(vim.fn.fnamemodify(vim.fn.getcwd(), ':t')) .. '  ' end,
-      text_align = "center" } },
+    offsets = {
+      {
+        filetype = "NvimTree",
+        text = function() return '🔭 ' .. string.upper(vim.fn.fnamemodify(vim.fn.getcwd(), ':t')) .. '  ' end,
+        text_align = "center"
+      },
+      {
+        filetype = "dapui_watches",
+        text = "Watches",
+        text_align = "center"
+      },
+      {
+        filetype = "dapui_breakpoints",
+        text = "Breakpoints",
+        text_align = "center"
+      },
+      {
+        filetype = "dapui_scopes",
+        text = "Scopes",
+        text_align = "center"
+      },
+      {
+        filetype = "dapui_console",
+        text = "Console",
+        text_align = "center"
+      }
+    },
     color_icons = true, -- whether or not to add the filetype icon highlights
     show_buffer_icons = true, -- disable filetype icons for buffers
     show_buffer_close_icons = false,

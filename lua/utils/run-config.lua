@@ -7,12 +7,13 @@ local dap = require 'dap'
 local utils = require 'utils/util-fn'
 
 local golandToDap = function()
+  local cwd = vim.fn.getcwd()
   local parseConfig = function(cfg)
     return {
       type = "go",
       name = cfg._attr.name,
       request = "launch",
-      program = cfg.filePath._attr.value:gsub("%$PROJECT_DIR%$", "file"),
+      program = cfg.filePath._attr.value:gsub("%$PROJECT_DIR%$", cwd),
       args = utils.split(cfg.parameters._attr.value)
     }
   end

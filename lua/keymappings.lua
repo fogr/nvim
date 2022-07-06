@@ -64,6 +64,7 @@ wk.register({
     g = { ':Telescope live_grep<CR>', 'Find grep' },
     b = { ':Telescope buffers<CR>', 'List buffers' },
     h = { ':Telescope help_tags<CR>', 'Show help' },
+    t = { ':Telescope current_buffer_fuzzy_find<CR>', 'Find in current buffer' },
   },
   g = {
     name = "Git",

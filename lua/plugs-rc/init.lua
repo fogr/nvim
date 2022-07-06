@@ -8,3 +8,4 @@ require('plugs-rc.neogit-rc');
 require('plugs-rc.which-key-rc');
 require('plugs-rc.nvim-ufo-rc');
 require('plugs-rc.buffer-line-rc');
+require('plugs-rc.nvim-dap-ui-rc');

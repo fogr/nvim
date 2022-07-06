@@ -1,6 +1,6 @@
 local dap_breakpoint = {
   error = {
-    text = "🟥",
+    text = "🍉",
     texthl = "LspDiagnosticsSignError",
     linehl = "",
     numhl = "",
@@ -12,7 +12,7 @@ local dap_breakpoint = {
     numhl = "",
   },
   stopped = {
-    text = "⭐️",
+    text = "🚧",
     texthl = "LspDiagnosticsSignInformation",
     linehl = "DiagnosticUnderlineInfo",
     numhl = "LspDiagnosticsSignInformation",
@@ -29,7 +29,6 @@ require("nvim-dap-virtual-text").setup {
 }
 
 local dap, dapui = require "dap", require "dapui"
-dapui.setup{}
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
 end

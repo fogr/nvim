@@ -41,3 +41,5 @@ vim.opt.listchars = {
   trail = '·',
   eol = '↲',
 }
+
+vim.o.ignorecase = true

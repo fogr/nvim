@@ -32,8 +32,8 @@ return require('packer').startup(function()
 
   --navigation
   use 'unblevable/quick-scope'
-  use 'phaazon/hop.nvim'
   use { 'akinsho/bufferline.nvim', tag = "v2.*" }
+  use 'ggandor/lightspeed.nvim'
 
   --theme
   use 'kyazdani42/nvim-web-devicons'
@@ -48,6 +48,7 @@ return require('packer').startup(function()
   -- git
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
   use 'kdheepak/lazygit.nvim'
+  use 'lewis6991/gitsigns.nvim'
 
   -- extension
   use 'github/copilot.vim'
@@ -71,12 +72,11 @@ return require('packer').startup(function()
 
 
   -- rocks
-   use_rocks 'luafilesystem'
-   use_rocks 'xml2lua'
+  use_rocks 'luafilesystem'
+  use_rocks 'xml2lua'
 
   -- for auto install dependencies
   if packer_bootstrap then
     require('packer').sync()
   end
 end)
-

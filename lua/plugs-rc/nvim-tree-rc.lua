@@ -4,4 +4,7 @@ require 'nvim-tree'.setup {
     custom = { '.git', 'node_modules' }
   },
   open_on_setup = true,
+  view = {
+    width = 60,
+  }
 }

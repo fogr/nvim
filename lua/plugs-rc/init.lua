@@ -9,3 +9,5 @@ require('plugs-rc.which-key-rc');
 require('plugs-rc.nvim-ufo-rc');
 require('plugs-rc.buffer-line-rc');
 require('plugs-rc.nvim-dap-ui-rc');
+require('plugs-rc.gitsigns-rc');
+require('plugs-rc.lightspeed-rc');

@@ -56,6 +56,7 @@ local on_attach = function(client, bufnr)
         f = { fn('format'), 'Format' },
       },
       l = {
+        name = 'Diagnostics',
         e = { fn('open_float', 'diagnostic'), 'Show line diagnostic' },
         -- l = { fn('setloclist', 'diagnostic'), 'Set loclist' },
         l = { ":lua require('telescope.builtin').diagnostics()<cr>", 'Show line diagnostic' },

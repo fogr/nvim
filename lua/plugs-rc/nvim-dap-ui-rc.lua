@@ -24,13 +24,13 @@ require("dapui").setup({
       elements = {
         -- Elements can be strings or table with id and size keys.
         --{ id = "scopes", size = 0.3 },
-        "watches",
-        "breakpoints",
-        "scopes"
+        { id = "watches", size = 0.3 },
+        { id = "breakpoints", size = 0.35 },
+        { id = "scopes", size = 0.35 }
         --"stacks",
         -- "watches",
       },
-      size = 70, -- 40 columns
+      size = 0.3, -- 40 columns
       position = "left",
     },
     {

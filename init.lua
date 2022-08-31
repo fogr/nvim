@@ -3,10 +3,10 @@ require('settings')
 require('lsp')
 require('plugs-rc')
 require('theme')
-require('keymappings')
 require('dap-rc')
 
 require('utils')
+require('keymappings')
 
 -- TODO: remove all old vim.cmd to vim.api autocmd
 vim.cmd [[

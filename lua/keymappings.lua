@@ -56,8 +56,8 @@ wk.register({
 }, { mode = 'x', noremap = true, silent = true })
 
 
--- Telescope
 wk.register({
+  -- Telescope
   f = {
     name = "File",
     f = { ':Telescope find_files<CR>', 'Find files' },
@@ -65,12 +65,16 @@ wk.register({
     b = { ':Telescope buffers<CR>', 'List buffers' },
     h = { ':Telescope help_tags<CR>', 'Show help' },
     t = { ':Telescope current_buffer_fuzzy_find<CR>', 'Find in current buffer' },
+    -- ranger
+    e = { ':RnvimrToggle<CR>', 'Open ranger' },
   },
+  -- Git
   g = {
     name = "Git",
     b = { ':Telescope git_branches<CR>', 'List branches' },
     g = { ':LazyGit<CR>', 'Lazy git' },
   },
+  -- Debug
   b = {
     name = "Debug",
     c = { ':Telescope dap commands<CR>', 'DAP commands' },
@@ -78,5 +82,5 @@ wk.register({
     l = { ':Telescope dap list_breakpoints<CR>', 'DAP breakpoints' },
     v = { ':Telescope dap variables<CR>', 'DAP variables' },
     f = { ':Telescope dap frames<CR>', 'DAP frames' },
-  }
+  },
 }, { mode = 'n', prefix = '<leader>', noremap = true, silent = true })

@@ -7,7 +7,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
   execute 'packadd packer.nvim'
 end
-
 require 'packer.luarocks'.install_commands()
 
 return require('packer').startup(function()
@@ -16,6 +15,7 @@ return require('packer').startup(function()
 
   -- explorer
   use 'kyazdani42/nvim-tree.lua'
+  use 'kevinhwang91/rnvimr'
 
   -- lsp
   use 'neovim/nvim-lspconfig'
@@ -23,12 +23,14 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip'
   use 'nvim-treesitter/nvim-treesitter'
   use { 'tjdevries/colorbuddy.vim' }
+  use 'nvim-treesitter/nvim-treesitter-context'
 
   -- telescope
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-media-files.nvim'
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   --navigation
   use 'unblevable/quick-scope'

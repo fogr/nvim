@@ -11,3 +11,5 @@ require('plugs-rc.buffer-line-rc');
 require('plugs-rc.nvim-dap-ui-rc');
 require('plugs-rc.gitsigns-rc');
 require('plugs-rc.lightspeed-rc');
+require('plugs-rc.telescope-media-rc');
+require('plugs-rc.nvim-treesitter-context-rc');

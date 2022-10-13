@@ -8,10 +8,7 @@ require('dap-rc')
 require('utils')
 require('keymappings')
 
--- TODO: remove all old vim.cmd to vim.api autocmd
-vim.cmd [[
-  autocmd BufWritePre * lua vim.lsp.buf.format()
-]]
+require('au')
 
 vim.lsp.handlers['textDocument/references'] = require('telescope.builtin').lsp_references
 

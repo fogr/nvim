@@ -92,7 +92,7 @@ end
 local servers = {
   "gopls",
   "tsserver",
-  "sumneko_lua",
+  "lua_ls",
   "html",
   "cssls",
 }

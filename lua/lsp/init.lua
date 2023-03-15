@@ -6,6 +6,7 @@ require 'lsp.dockerls-rc'
 require 'lsp.bashls-rc'
 require 'lsp.vscodels-rc'
 require 'lsp.vuels-rc'
+require 'lsp.hls-rc'
 
 local nvim_lsp = require('lspconfig')
 local wk = require('which-key')
@@ -13,7 +14,7 @@ local wk = require('which-key')
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  -- local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -84,7 +85,6 @@ local on_attach = function(client, bufnr)
       desc = "Clear All the references",
     })
   end
-
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
@@ -95,6 +95,7 @@ local servers = {
   "lua_ls",
   "html",
   "cssls",
+  "hls"
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
